@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar">
       <button onClick={() => window.history.back()}>Back</button>
       <button type="button">Update Location</button>
-      <button type="button" onClick={() => navigate("/Learn_More")}>Learn More</button>
+      <button type="button" onClick={()  => navigate("/Learn_More")}>Learn More</button>
     </nav>
   );
 };
