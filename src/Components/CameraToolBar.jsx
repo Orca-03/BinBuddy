@@ -1,10 +1,22 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-const CameraToolBar = () => {
+const CameraToolBar = ({ setScanState }) => {
+const navigate = useNavigate();
+
   return (
     <nav className="cameraToolBar">
-      <button type="button">Button 1</button>
-      <button type="button">Button 2</button>
+      <button type="button">Gallery</button>
+
+      <button
+        type="button"
+        onClick={() => {
+          setScanState("preview");
+          navigate("/Waste_Info");
+        }}
+      >
+        Camera
+      </button>
     </nav>
   );
 };
