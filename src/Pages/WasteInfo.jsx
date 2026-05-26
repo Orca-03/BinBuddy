@@ -1,25 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-export default function WasteInfo({ scanState, setScanState }) {
+import WasteInfoComponent from "../Components/WasteInfoComponent";
+
+export default function WasteInfo({ scanState, setScanState, photo }) {
   //TO DO:: Create conditional logic to inform user of bad picture.
-  console.log("scanState =", scanState);
+  const navigate = useNavigate();
   return (
     <div>
     <h1>Waste Info</h1>
 
-      
-
-      {scanState === "preview" && 
+      {scanState === "preview" || scanState === "evaluated" && 
         <>
-          {/* image preview */}
+          {photo && <img src={photo} alt="captured" />} 
+          <br />
         </>
       }
-      <button>Retake</button>
-
-      {scanState === "preview" && 
-        <button onClick={() => 
-          setScanState("evaluated")}>
-        Confirm</button> }
 
       {scanState === "rejected" &&
         <div>
@@ -28,14 +23,21 @@ export default function WasteInfo({ scanState, setScanState }) {
         </div>
       }
 
+      <button 
+        onClick={() => {
+          navigate("/");
+          setScanState("idle");
+        }}>
+        Retake</button>
+
+      {scanState === "preview" && 
+        <button onClick={() => 
+          setScanState("evaluated")}>
+        Confirm</button> 
+      }
+
       {scanState === "evaluated" && 
-        <div>
-          <h3>Name</h3><button>Wrong Item?</button>
-          <h5>Item Info:</h5>
-          <p></p>
-          <h5>Links:</h5>
-          <a href=""></a>
-        </div>
+        <WasteInfoComponent/>
       }
 
     </div>

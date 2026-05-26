@@ -1,12 +1,9 @@
 import React from 'react';
 
-const WasteInfo = () => {
+const WasteInfoComponent = () => {
   return (
     <section className="waste-info">
       <h2>Item Name</h2>
-      <p>Placeholder for item name data.</p>
-
-      <button type="button">Retake</button>
 
       <div className="wrong-item">
         <label htmlFor="wrong-item-select">Wrong item?</label>
@@ -31,4 +28,4 @@ const WasteInfo = () => {
   );
 };
 
-export default WasteInfo;
+export default WasteInfoComponent;

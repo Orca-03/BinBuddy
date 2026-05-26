@@ -13,17 +13,18 @@ import WasteInfo from "./Pages/WasteInfo";
 
 export default function App() {
   const [scanState, setScanState] = useState("idle");
+  const [photo, setPhoto] = useState(null);
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home  setScanState={setScanState}/>} />
+        <Route path="/" element={<Home  setScanState={setScanState} setPhoto={setPhoto} />} />
         <Route path="/Learn_More" element={<LearnMore />} />
         <Route path="/App_Info" element={<AppInfo />} />
         <Route path="/Privacy_Policy" element={<PrivacyPolicy />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Waste_Info" element={<WasteInfo scanState={scanState} setScanState={setScanState}/>} />
+        <Route path="/Waste_Info" element={<WasteInfo scanState={scanState} setScanState={setScanState} photo={photo}/>} />
       </Routes>
     </>
   );
