@@ -9,7 +9,7 @@ export default function WasteInfo({ scanState, setScanState, photo }) {
     <div>
     <h1>Waste Info</h1>
 
-      {scanState === "preview" || scanState === "evaluated" && 
+      {(scanState === "preview" || scanState === "evaluated") && 
         <>
           {photo && <img src={photo} alt="captured" />} 
           <br />
