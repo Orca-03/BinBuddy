@@ -1,22 +1,22 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
-
-
-const CameraToolBar = ({ canCapture, handleCapture }) => {
-const navigate = useNavigate();
-
+const CameraToolBar = ({ canCapture, handleCapture, handleGallery}) => {
   console.log(canCapture);
 
   return (
     <nav className="cameraToolBar">
 
-      <button type="button">Gallery</button>
+      <button
+        onClick={() => {
+            console.log("GALLERY CLICKED");
+            handleGallery();
+        }}>  
+        Gallery</button>
 
       <button
         disabled={!canCapture}
         onClick={ handleCapture }
       >
-        Camera</button>
+        Take Photo</button>
     </nav>
   );
 };

@@ -33,12 +33,17 @@ export default function Camera({ setCameraAPI }) {
 
     function takePhoto() {
         const video = videoRef.current;
-        const photo = document.createElement("canvas");
-        const ctx = photo.getContext("2d");
-        photo.width = video.videoWidth;
-        photo.height = video.videoHeight;
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
         ctx.drawImage(video, 0, 0);
-        return photo.toDataURL("image/png");
+
+        return new Promise((resolve) => {
+            canvas.toBlob((blob) => {
+                resolve(blob);
+            }, "image/png");
+        });
     }
         
     return (
