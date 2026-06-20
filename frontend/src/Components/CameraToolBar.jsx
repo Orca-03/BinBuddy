@@ -5,19 +5,25 @@ const CameraToolBar = ({ canCapture, handleCapture, handleGallery}) => {
   return (
     <nav className="cameraToolBar">
 
-      <button
-        onClick={() => {
-            console.log("GALLERY CLICKED");
-            handleGallery();
-        }}>  
-        Gallery</button>
+  <button
+    className="toolbar-btn toolbar-btn--secondary"
+    onClick={() => {
+      console.log("GALLERY CLICKED");
+      handleGallery();
+    }}
+  >
+    Gallery
+  </button>
 
-      <button
-        disabled={!canCapture}
-        onClick={ handleCapture }
-      >
-        Take Photo</button>
-    </nav>
+  <button
+    className="toolbar-btn toolbar-btn--primary"
+    disabled={!canCapture}
+    onClick={handleCapture}
+  >
+    Take Photo
+  </button>
+
+</nav>
   );
 };
 

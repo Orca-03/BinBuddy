@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -34,17 +35,20 @@ export default function Home({setScanState, setPhoto}) {
     }
 
 
-  return (
-    <div>
-      <Camera 
-        setCameraAPI={setCameraAPI}
-      />
-      <CameraToolBar 
-        canCapture={!!cameraAPI}
-        handleCapture={handleCapture}
-        handleGallery={handleGallery}
-      />
-      <p></p>
+return (
+  <div className="home">
+    <h1>BinBuddy</h1>
+    <p>"Every piece of garbage deserves a proper end"</p>
+
+    <div className="camera-card">
+      <Camera setCameraAPI={setCameraAPI} />
     </div>
-  );
+
+    <CameraToolBar
+      canCapture={!!cameraAPI}
+      handleCapture={handleCapture}
+      handleGallery={handleGallery}
+    />
+  </div>
+);
 }

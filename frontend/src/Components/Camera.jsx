@@ -47,6 +47,9 @@ export default function Camera({ setCameraAPI }) {
     }
         
     return (
-        <video ref={videoRef} autoPlay playsInline />
+        <video ref={videoRef} 
+        autoPlay 
+        playsInline
+        className="camera-feed" />
     );
 }
