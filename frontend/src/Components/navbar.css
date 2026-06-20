@@ -1,5 +1,51 @@
 .navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1.5px solid var(--eco-border);
+  background: var(--eco-tint);
+  color: var(--eco-green-dark);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.nav-btn:active {
+  transform: translateY(1px);
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid var(--eco-green);
+  outline-offset: 2px;
+}
+
+.nav-btn--back {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text);
+}
+
+.nav-btn--back:hover {
+  background: #ffffff;
+  color: #000000;
 }
