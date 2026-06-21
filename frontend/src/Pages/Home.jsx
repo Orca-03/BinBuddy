@@ -6,6 +6,7 @@ import Camera from "../Components/Camera";
 import { pickImage, uploadImage } from "../Components/FileUpload";
 import { validateImage } from "../Components/FileUpload";
 import CameraToolBar from "../Components/CameraToolBar";
+import "./Home.minimal.css"
 
 export default function Home({setScanState, setPhoto}) {
   const navigate = useNavigate();
