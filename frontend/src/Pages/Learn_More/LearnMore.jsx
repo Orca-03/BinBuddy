@@ -1,20 +1,17 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import "./LearnMore.css"
 
 export default function LearnMore() {
-  const navigate = useNavigate();
-  console.log("LEARNMORE MOUNTED");
   return (
     <div className="learn-more-page">
       <h1>Learn More</h1>
+      <br />
       <div className="learn-more-buttons">
-        <button type="button" onClick={() => {navigate("/App_Info");}}>App Info</button>
-        <button type="button" onClick={() => {navigate("/Privacy_Policy");}}>Privacy Policy</button>
-        <button type="button" onClick={() => {navigate("/FAQ");}}>FAQ</button>
-        <button type="button" onClick={() => {navigate("/About");}}>About</button>
-        </div>
+        <Link to="/App_Info">App Info</Link><br />
+        <Link to="/Privacy_Policy">Privacy Policy</Link><br />
+        <Link to="/FAQ">FAQ</Link><br />
+        <Link to="/About">About</Link>
+      </div>
     </div>
   );
 }
-

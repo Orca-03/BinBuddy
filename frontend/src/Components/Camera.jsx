@@ -6,26 +6,41 @@ export default function Camera({ setCameraAPI }) {
     const videoRef = useRef(null);
     const streamRef = useRef(null);
 
-    useEffect(() => {
-        async function startCamera() {
-            const stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: "environment" },
-                width: { ideal: 1280 },
-                height: { ideal: 720 }
-            });
+useEffect(() => {
+  let stream;
 
-            videoRef.current.srcObject = stream;
-            streamRef.current = stream;
+    async function startCamera() {
+        try {
+        stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" }
+        });
 
-            setCameraAPI({
-                takePhoto: takePhoto,
-                stop: stopCamera
-            });
+        if (!videoRef.current) return;
+
+        videoRef.current.srcObject = stream;
+        streamRef.current = stream;
+
+        videoRef.current.onloadedmetadata = () => {
+            videoRef.current.play();
+        };
+
+        setCameraAPI({
+            takePhoto,
+            stop: stopCamera
+        });
+
+        } catch (err) {
+        console.error("Camera failed:", err);
         }
-        startCamera();
-        return () => {stopCamera();};
+    }
 
+    startCamera();
+
+    return () => {
+        stopCamera();
+    };
     }, []);
+    
 
     function stopCamera() {
         if (streamRef.current) {
