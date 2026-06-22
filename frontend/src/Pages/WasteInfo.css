@@ -1,0 +1,37 @@
+.photoFrame {
+  width: 98.8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  border: 6px solid;
+  border-color: var(--land-green); 
+}
+
+.photoFrame img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.wasteInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.actionRow {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  gap: 0;
+}
+
+.actionRow button {
+  flex: 1;
+  padding: clamp(12px, 2vh, 20px) 0;
+}
+
+
