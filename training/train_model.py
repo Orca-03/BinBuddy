@@ -43,8 +43,8 @@ if __name__ == "__main__":
 
     # Initialize training device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Traininng on device: {device}\n")
-    print(f"Target classes: {train_dataset.classes}\n")
+    print(f"Training on device: {device}")
+    print(f"Target classes: {train_dataset.classes}")
     print(f"Loaded {len(train_dataset)} training images and {len(val_dataset)} validation images\n")
 
     # Calculate class weights
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     # Training loop
     best_accuracy = 0.0
     for epoch in range(EPOCHS):
-        print(f"\n=== EPOCH {epoch + 1}/{EPOCHS} ===\n")
+        print(f"=== EPOCH {epoch + 1}/{EPOCHS} ===")
 
         # Training
         running_loss = 0.0
