@@ -2,6 +2,7 @@
 /.temp
 /raw_dataset
 /master_dataset
+binbuddy*.json
 *.pth
 
 # Byte-compiled / optimized / DLL files
