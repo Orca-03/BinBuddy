@@ -1,4 +1,5 @@
 import os
+import json
 import torch
 from torchvision import models, transforms, datasets
 from collections import Counter
@@ -14,6 +15,7 @@ LEARNING_RATE = 0.001
 WEIGHT_DECAY = 1e-4
 
 MODEL_FILE_NAME = "binbuddy_model_best.pth"
+CLASS_FILE_NAME = "binbuddy_classes.json"
 
 # === Data Transforms ===
 BASE_TRANSFORMS = [
@@ -111,3 +113,10 @@ if __name__ == "__main__":
             print(f"New best model saved as \"{MODEL_FILE_NAME}\"\n")
 
     print(f"Training complete! Best accuracy: {best_accuracy:.2f}%")
+    
+    try:
+        with open(CLASS_FILE_NAME, "w") as f:
+            json.dump(train_dataset.classes, f)
+            print(f"Saved classes to {CLASS_FILE_NAME}")
+    except Exception as e:
+        print(f"Failed to save classes")
