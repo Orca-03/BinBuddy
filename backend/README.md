@@ -1,6 +1,6 @@
 # Setup Instructions
 ### 1. Install Python 3.11
-On Windows (cmd) with Python Install Manager
+On Windows (cmd) with [Python Install Manager](https://www.python.org/downloads/release/pymanager-262/)
 ```cmd
 pymanager install 3.11
 ```
