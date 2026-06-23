@@ -4,7 +4,7 @@ import shutil
 from PIL import Image
 from rich.progress import track
 
-# Config
+# === Config ===
 RAW_DATA_DIR = "./raw_dataset"
 MASTER_DATA_DIR = "./master_dataset"
 
