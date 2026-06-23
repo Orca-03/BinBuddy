@@ -2,6 +2,7 @@
 /.temp
 /raw_dataset
 /master_dataset
+*.pth
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
