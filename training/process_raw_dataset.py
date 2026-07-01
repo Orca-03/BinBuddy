@@ -64,7 +64,7 @@ if __name__ == "__main__":
     # Split, resize, and save images
     total_images_processed = 0
 
-    for target_category, image_paths in track(categorized_images.items()):
+    for target_category, image_paths in categorized_images.items():
         # Split images of each category based on training and validation split sizes
         random.shuffle(image_paths)
         split_index = int(len(image_paths) * TRAIN_SPLIT_RATIO)
@@ -73,14 +73,14 @@ if __name__ == "__main__":
         print(f"Processing \"{target_category}\": {len(train_images)} training images, {len(val_images)} validation images")
 
         # Process training set
-        for image_path in train_images:
+        for image_path in track(train_images, description="Processing training images..."):
             destination_file_name = f"train_{os.path.basename(image_path)}"
             destination_path = os.path.join(MASTER_DATA_DIR, "train", target_category, destination_file_name)
             if process_image(image_path, destination_path):
                 total_images_processed += 1
         
         # Process validation set
-        for image_path in val_images:
+        for image_path in track(val_images, description="Processing validation images..."):
             destination_file_name = f"val_{os.path.basename(image_path)}"
             destination_path = os.path.join(MASTER_DATA_DIR, "val", target_category, destination_file_name)
             if process_image(image_path, destination_path):
