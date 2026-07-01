@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import Camera from "../Components/Camera";
 import { pickImage, uploadImage } from "../Components/FileUpload";
-import { validateImage } from "../Components/FileUpload";
+import { validateImage } from "../Components/FileUpload"; // validateImage should be a home function
 import CameraToolBar from "../Components/CameraToolBar";
 import "./Home.minimal.css"
 
@@ -15,8 +15,8 @@ export default function Home({setScanState, setPhoto}) {
     async function processImage(file) {
         if (!file) return;
         await validateImage(file);
-        const imageURL = URL.createObjectURL(file);
-        setPhoto(imageURL);
+        //const imageURL = URL.createObjectURL(file);
+        setPhoto(file);
         setScanState("preview");
         navigate("/Waste_Info");
     }
