@@ -1,0 +1,73 @@
+.photoFrame {
+  width: 98.8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  border: 6px solid;
+  border-color: var(--land-green); 
+}
+
+.photoFrame img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.wasteInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.actionRow {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  gap: 0;
+}
+
+.actionRow button {
+  flex: 1;
+  padding: clamp(12px, 2vh, 20px) 0;
+}
+
+.retake-btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 3px solid red;
+  background: white;
+  color: red;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.retake-btn:hover {
+  border: 3px solid white;
+  background: red;
+  color:#ffffff
+}
+
+.confirm-btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 3px solid green;
+  background: rgb(66, 228, 66);
+  color: black;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.confirm-btn:hover {
+  border: 3px solid white;
+  background: green;
+  color:white;
+}
+
+

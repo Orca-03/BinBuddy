@@ -1,0 +1,53 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-left: 7px solid #168a29;
+  border-right: 7px solid #168a29;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 3px solid green;
+  background:rgb(54, 243, 54);
+  color: black;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.nav-btn:active {
+  transform: translateY(1px);
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid var(--eco-green);
+  outline-offset: 2px;
+}
+
+.nav-btn.nav-btn--back {
+  background: transparent;
+  border-color:white;
+  color: white;
+}
+
+.nav-btn.nav-btn--back:hover {
+  border-color: green;
+  background: white;
+  color: green;
+}
