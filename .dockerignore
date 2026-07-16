@@ -1,0 +1,11 @@
+env/
+.venv/
+
+training/master_dataset
+training/raw_dataset
+*.pth
+
+frontend/node_modules
+
+__pycache__/
+*.pyc
