@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { getCookie, setCookie } from "./Components/Cookies";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
-import LearnMore from "./Pages/Learn_More/LearnMore";
-import AppInfo from "./Pages/Learn_More/AppInfo";
-import FAQ from "./Pages/Learn_More/FAQ";
-import About from "./Pages/Learn_More/About";
-import PrivacyPolicy from "./Pages/Learn_More/PrivacyPolicy";
+import LearnMore from "./Pages/Learn_More_Pages/LearnMore";
+import AppInfo from "./Pages/Learn_More_Pages/AppInfo";
+import FAQ from "./Pages/Learn_More_Pages/FAQ";
+import About from "./Pages/Learn_More_Pages/About";
+import PrivacyPolicy from "./Pages/Learn_More_Pages/PrivacyPolicy";
 import WasteInfo from "./Pages/WasteInfo";
 
 

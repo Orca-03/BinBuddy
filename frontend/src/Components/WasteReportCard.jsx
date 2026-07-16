@@ -23,7 +23,7 @@ const WasteInfoComponent = ({ prediction }) => {
 
   return (
     <section className="WasteReportCard">
-      <h2 className="item-name">Item Name: {evaluatedItem}</h2>
+      <h2 className="item-name">Item: {evaluatedItem}</h2>
 
       {/* Wrong Item Selector */}
       <div className="wrong-item">

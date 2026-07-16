@@ -37,6 +37,10 @@ export default function Home({ setScanState, setPhoto }) {
       throw new Error("No file provided");
     }
 
+    if (file.size > 10 * 1024 * 1024) {
+      throw new Error("Image too large");
+    }
+
     const validTypes = ["image/jpeg", "image/png", "image/webp"];
 
     if (!validTypes.includes(file.type)) {

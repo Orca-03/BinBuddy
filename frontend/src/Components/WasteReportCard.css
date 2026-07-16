@@ -1,82 +1,83 @@
 .WasteReportCard {
-	display: grid;
-	grid-template-columns: 2fr 1fr; 
-	grid-template-rows: minmax(auto, 150px) auto auto; 
-	grid-template-areas:
-		"item-name wrong-item"
-		"item-info item-info"
-		"links links";
-	width: 100%;
-    background-color: var(--border);
-    text-align: left;
-    align-items: stretch; 
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: minmax(auto, 150px) auto auto;
+  grid-template-areas:
+    "item-name wrong-item"
+    "item-info item-info"
+    "links links";
+  width: 100%;
+  background-color: var(--border);
+  text-align: left;
+  font-family: var(--sans);
+  align-items: stretch;
 }
 
 .WasteReportCard > * {
-    box-sizing: border-box;
-    outline: 2px solid var(--land-green);
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    color: black;
+  box-sizing: border-box;
+  outline: 2px solid var(--land-green);
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
 }
 
+.WasteReportCard h2,
+h3,
+p,
+a {
+  color: black;
+  padding-left: 2%;
+}
 
-.WasteReportCard h2,h3,p,a {
-    color: black;
-    padding-left: 2%;
+h2 {
+    font-weight: 900;
 }
 
 p {
-    padding-top: 1% ;
-    font-size: large;
-    white-space: pre-line;
+  padding-top: 1%;
+  font-size: large;
+  white-space: pre-line;
 }
 
 .WasteReportCard > * {
-    outline: 2px solid var(--land-green);
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    color: black;
+  outline: 2px solid var(--land-green);
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
 }
 
-
 .item-name {
-    display: flex;
-    align-items: center;
-    background-color: lime;    
-    grid-area: item-name;
+  display: flex;
+  align-items: center;
+  background-color: lime;
+  grid-area: item-name;
 }
 
 select {
-    background-color: lime;     
-    color: black;
-    text-align: center;
+  background-color: lime;
+  color: black;
+  text-align: center;
 }
 
-#wrong-item-select{
-    width: 100%;
-    height: 100%;
+#wrong-item-select {
+  width: 100%;
+  height: 100%;
 }
 
 .item-info {
-    grid-area: item-info;
+  grid-area: item-info;
 }
 
-.links {    
-    display: flex;
-    flex-direction: column;
-    grid-area: links;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    padding-bottom: 20px;
+.links {
+  display: flex;
+  flex-direction: column;
+  grid-area: links;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding-bottom: 20px;
 }
-
-
-
-
-
 
 /* @media (max-width: 600px) {
 	.WasteReportCard {
