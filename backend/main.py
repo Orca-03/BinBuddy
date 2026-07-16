@@ -7,6 +7,8 @@ from PIL import Image
 from contextlib import asynccontextmanager
 from torchvision import models, transforms
 from fastapi import FastAPI, UploadFile, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 # === Config ===
 MODEL_PATH = "./binbuddy_model_best.pth"
@@ -77,12 +79,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def root():
-    return {
-        "message": "hello world"
-    }
-
 @app.get("/api/waste/{category}")
 def get_waste_info(category: str):
     # This endpoint allows the frontend to request
@@ -121,3 +117,21 @@ async def upload(file: UploadFile):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Model inference failed: {str(e)}")
+    
+frontend_dist_dir = os.path.abspath("../frontend/dist")
+assets_dir = os.path.join(frontend_dist_dir, "assets")
+
+if os.path.exists(assets_dir):
+    app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+@app.get("/{full_path:path}")
+async def serve_spa_frontend(full_path: str):
+    specific_file_path = os.path.join(frontend_dist_dir, full_path)
+    if os.path.isfile(specific_file_path):
+        return FileResponse(specific_file_path)
+        
+    index_html_path = os.path.join(frontend_dist_dir, "index.html")
+    if os.path.exists(index_html_path):
+        return FileResponse(index_html_path)
+    
+    return {"error": "Frontend build files not found. Ensure 'npm run build' was executed."}
