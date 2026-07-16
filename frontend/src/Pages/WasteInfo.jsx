@@ -5,7 +5,6 @@ import "./WasteInfo.css"
 
 export default function WasteInfo({ scanState, setScanState, photo }) {
 
-  //TO DO:: Create conditional logic to inform user of bad picture.
   const navigate = useNavigate();
   const [prediction, setPrediction] = useState(null);
 
@@ -38,7 +37,6 @@ export default function WasteInfo({ scanState, setScanState, photo }) {
       <h1>Waste Info</h1>
 
       {(scanState === "preview" || scanState === "evaluated") && 
-        <>
           <div className="photoFrame">
             {photo && (
               <img
@@ -47,8 +45,6 @@ export default function WasteInfo({ scanState, setScanState, photo }) {
               />
             )}
           </div>
-          <br />
-        </>
       }
 
       {scanState === "rejected" &&
@@ -74,17 +70,7 @@ export default function WasteInfo({ scanState, setScanState, photo }) {
       </div>
 
       {scanState === "evaluated" && prediction && (
-        <>
-          <div>
-            <h2>{prediction.category}</h2>
-
-            <pre>
-              {JSON.stringify(prediction, null, 2)}
-            </pre>
-          </div>
-
-          <WasteReportCard />
-        </>
+        <WasteReportCard prediction={prediction} />
       )}
 
     </div>

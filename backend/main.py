@@ -13,6 +13,20 @@ MODEL_PATH = "./binbuddy_model_best.pth"
 CLASSES_PATH = "./binbuddy_classes.json"
 IMAGE_SIZE = 384
 
+def load_waste_data():
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    waste_data_path = os.path.join(current_dir, "waste_data.json")
+
+    if not os.path.exists(waste_data_path):
+        raise FileNotFoundError(
+            f"waste_data.json not found at {waste_data_path}"
+        )
+
+    with open(waste_data_path, "r") as f:
+        return json.load(f)
+    
 TRANSFORM = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
     transforms.ToTensor(),
@@ -28,6 +42,9 @@ LOGGER = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     LOGGER.info(f"Initializing resources...")
     app.state.device = torch.device("cpu")
+    app.state.waste_data = load_waste_data()
+
+    print("Waste categories loaded:", app.state.waste_data.keys())
 
     # Initialize classes
     if not os.path.exists(CLASSES_PATH):
@@ -66,6 +83,20 @@ def root():
         "message": "hello world"
     }
 
+@app.get("/api/waste/{category}")
+def get_waste_info(category: str):
+    # This endpoint allows the frontend to request
+    # disposal information for any category.
+    # independent of the model's prediction
+
+    if category not in app.state.waste_data:
+        raise HTTPException(
+            status_code=404,
+            detail="Waste category not found"
+        )
+
+    return app.state.waste_data[category]
+
 @app.post("/api/classify/")
 async def upload(file: UploadFile):
     # File validations
@@ -82,9 +113,11 @@ async def upload(file: UploadFile):
             probabilities = torch.nn.functional.softmax(outputs[0], dim=0)
         
         predictions = {app.state.classes[i]: float(probabilities) for i, probabilities in enumerate(probabilities)}
+        category = max(predictions, key=predictions.get)
         return {
-            "category": max(predictions, key=predictions.get),
-            "conf-scores": predictions
+            "category": category,
+            "conf-scores": predictions,
+            "disposal-instructions": app.state.waste_data.get(category, {})
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Model inference failed: {str(e)}")

@@ -1,0 +1,184 @@
+{
+  "paper": {
+    "info": [
+      "Accepted: dispose in the household paper recycling bin",
+      "",
+      "Accepted:",
+      "- Newspaper",
+      "- Flyers",
+      "- Phone books",
+      "- Office paper",
+      "- Paper egg cartons, paper drink trays, clean pizza boxes",
+      "- Paper bags",
+      "- Paper bags with plastic layers (flour bags, pet food bags, etc.)",
+      "- Paper towel and toilet paper cores",
+      "- Boxboard and cardboard",
+      "",
+      "Not Accepted:",
+      "- Tissue paper",
+      "- Hard cover and soft cover books",
+      "- Paper towels and napkins",
+      "- Music cards with batteries",
+      "- Padded envelopes",
+      "- Bags with foil layer",
+      "- Boxes with foil liner",
+      "- Compostable paper takeout boxes",
+      ""
+    ]
+  },
+
+  "cardboard": {
+    "info": [
+      "Accepted: dispose in the household paper recycling bin",
+      "",
+      "Accepted:",
+      "- Newspaper",
+      "- Flyers",
+      "- Phone books",
+      "- Office paper",
+      "- Paper egg cartons, paper drink trays, clean pizza boxes",
+      "- Paper bags",
+      "- Paper bags with plastic layers (flour bags, pet food bags, etc.)",
+      "- Paper towel and toilet paper cores",
+      "- Boxboard and cardboard",
+      "",
+      "Not Accepted:",
+      "- Tissue paper",
+      "- Hard cover and soft cover books",
+      "- Paper towels and napkins",
+      "- Music cards with batteries",
+      "- Padded envelopes",
+      "- Bags with foil layer",
+      "- Boxes with foil liner",
+      "- Compostable paper takeout boxes",
+      ""
+    ]
+  },
+
+
+  "plastic": {
+    "info": [
+      "Accepted: dispose in the blue recycling bin",
+      "",
+      "Accepted:",
+      "- Paper or plastic takeout cups, bowls, and lids",
+      "- Plastic trays and tops (fruit trays, etc.)",
+      "- Cartons (soup, milk, sauce, etc.)",
+      "- Microwavable bowls and cups",
+      "- Plastic bottles, jugs, jars, tubs, and trays",
+      "- Bottle caps, lids, and pumps",
+      "- Plastic packaging (toys, batteries, electronics, etc. separate from paper backing)",
+      "- Clamshell containers (baked goods, fruit, eggs, etc.)",
+      "- Plastic garden plant pots and seeding trays",
+      "- Laundry detergent bottles",
+      "",
+      "Not Accepted:",
+      "- Plastic bags",
+      "- Zip lock bags",
+      "- Plastic wraps (saran wrap)",
+      "- Blister packs",
+      "- Toys",
+      "- Plastic coat hangers", 
+      "- Plastic hardware",
+      "",
+      "Disposal Instructions:",
+      "- Clean all food-related containers and plastics thoroughly.",
+      "- Place plastic waste into blue recycling bins."
+    ]
+  },
+
+  
+  "metal": {
+    "info": [
+      "Accepted: dispose in the blue recycling bin",
+      "",
+      "Accepted:",
+      "- Metal soup and fruit cans",
+      "- Aluminum foil",
+      "- Soda cans",
+      "- Empty aerosol cans and caps",
+      "",
+      "Not Accepted:",
+      "- Microwaveable bowls with metal rims",
+      "- Foil-lined cardboard containers",
+      "- Metal coat hangers",
+      "- Wires and electrical cords",
+      "- Batteries",
+      "- Syringes",
+      "- Metal cans with danger, warning, or poison labels",
+      "",
+      "Disposal Instructions:",
+      "- Make sure all food-related containers are cleaned thoroughly.",
+      "- Make sure aerosol cans are empty before disposal.",
+      "- Place metal waste into blue recycling bins."
+    ]
+  },
+
+  "glass": {
+    "info": [
+      "Accepted: dispose in the grey glass recycling bin",
+      "",
+      "Accepted:",
+      "- Clear non-coloured non-deposit glass bottles and jars",
+      "",
+      "Not Accepted:",
+      "- Drinking glasses",
+      "- Dishes",
+      "- Cookware",
+      "- Window glass",
+      "- Mirrors",
+      "- Ceramic",
+      "- Lightbulbs and lighting fixtures",
+      "",
+      "Disposal Instructions:",
+      "- Make sure all food-related containers are cleaned thoroughly."
+    ]
+  },
+
+  "depot": {
+    "info": [
+      "Accepted: bring to the nearest recycling depot",
+      "",
+      "Accepted:",
+      "- Plastic bags (grocery and produce bags)",
+      "- Outer bags for hygiene products",
+      "- Bags for wood pellets and garden products",
+      "- Overwrap on mattresses, furniture, and electronic equipment",
+      "- Foam food containers and trays",
+      "- Foam cushion packaging",
+      "",
+      "Not Accepted:",
+      "- Cellophane wrap",
+      "- Kitchen stretch wrap",
+      "- Zip lock bags",
+      "- Plastic shipping envelopes or bubble wrap",
+      "- Chip and snack bags",
+      "- Garbage bags",
+      "- Packing chips",
+      "- Foam board insulation",
+      "- Furniture cushions"
+    ]
+  },
+
+  "landfill": {
+    "info": [
+      "Accepted: dispose in household garbage",
+      "",
+      "Accepted:",
+      "- Rinsed diapers",
+      "- Chip bags",
+      "- Ziplock bags",
+      "- Bubble wrap",
+      "- Candy wrappers",
+      "",
+      "Not Accepted:",
+      "- Food scraps",
+      "- Yard waste and leaves",
+      "- Recyclable items",
+      "- Hazardous materials",
+      "- Excrement",
+      "- Batteries",
+      ""
+    ]
+  }
+}

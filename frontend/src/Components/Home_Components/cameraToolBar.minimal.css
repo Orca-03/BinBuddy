@@ -1,5 +1,4 @@
 .cameraToolBar {
-
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr auto 1fr;
@@ -24,14 +23,13 @@
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-  
 
 .toolbar-btn--secondary {
   width: clamp(15px, 8vw, 88px);
   height: clamp(15px, 8vw, 88px);
   border-radius: 12px;
   background: white;
-  color:#000000;
+  color: #000000;
   border: clamp(2px, 0.6vw, 4px) solid;
   border-color: black;
   align-items: center;
@@ -42,7 +40,7 @@
 .toolbar-btn--secondary:hover {
   border-color: var(--land-green);
   color: var(--land-green);
-  transform: scale(0.50);
+  transform: scale(0.5);
 }
 
 .gallery-icon {
@@ -90,7 +88,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 /* .toolbar-btn:focus-visible {
   outline: 2px solid var(--land-green);

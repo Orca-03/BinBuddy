@@ -27,11 +27,16 @@
   width: 100%;
   margin: 0;
   gap: 0;
+  margin-bottom: 64 rem;
 }
 
 .actionRow button {
   flex: 1;
   padding: clamp(12px, 2vh, 20px) 0;
+}
+
+.wasteInfo p {
+    white-space: pre-wrap;
 }
 
 

@@ -1,7 +1,7 @@
 .WasteReportCard {
 	display: grid;
 	grid-template-columns: 2fr 1fr; 
-	grid-template-rows: 30% auto auto; 
+	grid-template-rows: minmax(auto, 150px) auto auto; 
 	grid-template-areas:
 		"item-name wrong-item"
 		"item-info item-info"
@@ -12,10 +12,25 @@
     align-items: stretch; 
 }
 
+.WasteReportCard > * {
+    box-sizing: border-box;
+    outline: 2px solid var(--land-green);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+}
 
-.WasteReportCard h2,h3,p {
+
+.WasteReportCard h2,h3,p,a {
     color: black;
     padding-left: 2%;
+}
+
+p {
+    padding-top: 1% ;
+    font-size: large;
+    white-space: pre-line;
 }
 
 .WasteReportCard > * {
@@ -28,11 +43,10 @@
 
 
 .item-name {
-    background-color: lime;    
-    grid-area: item-name;
     display: flex;
     align-items: center;
-    height: 100%;
+    background-color: lime;    
+    grid-area: item-name;
 }
 
 select {
@@ -51,10 +65,16 @@ select {
 }
 
 .links {    
+    display: flex;
+    flex-direction: column;
     grid-area: links;
     border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px
+    border-bottom-right-radius: 12px;
+    padding-bottom: 20px;
 }
+
+
+
 
 
 

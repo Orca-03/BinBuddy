@@ -6,6 +6,8 @@ import DemoPic2 from "../../assets/DemoPic2.png";
 import DemoPic3 from "../../assets/DemoPic3.png";
 import "./AppInfo.css"
 
+// TODO: The pictures need to load faster
+
 export default function AppInfo({ setShowIntro }){
   const navigate = useNavigate();
   const isIntro = typeof setShowIntro === "function";
