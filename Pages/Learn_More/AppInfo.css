@@ -1,0 +1,32 @@
+.appInfo {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 1rem;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
+    padding: 2%;
+}
+
+.appInfo > * {
+    color: white;
+    margin: 0;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.appInfo button {
+    padding: clamp(10px, 2vw, 18px)
+             clamp(20px, 4vw, 36px);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
