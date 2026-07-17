@@ -17,7 +17,7 @@ export default function WasteInfo({ scanState, setScanState, photo }) {
       formData.append("file", photo, "image.jpg");
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/classify/`,
+        `${import.meta.env.VITE_API_URL}/api/classify`,
         {
           method: "POST",
           body: formData
