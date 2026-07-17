@@ -93,7 +93,7 @@ def get_waste_info(category: str):
 
     return app.state.waste_data[category]
 
-@app.post("/api/classify/")
+@app.post("/api/classify")
 async def upload(file: UploadFile):
     # File validations
     if not file.content_type or not file.content_type.startswith("image/"):
