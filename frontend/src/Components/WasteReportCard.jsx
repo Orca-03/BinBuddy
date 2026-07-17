@@ -9,7 +9,7 @@ const WasteInfoComponent = ({ prediction }) => {
   useEffect(() => {
     const fetchWasteInfo = async () => {
       const response = await fetch(
-        `http://localhost:8000/api/waste/${evaluatedItem}`,
+        `${import.meta.env.VITE_API_URL}/api/waste/${evaluatedItem}`,
       );
 
       const result = await response.json();
